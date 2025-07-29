@@ -1,0 +1,8 @@
+streamlit
+openai>=1.6.0
+python-docx
+PyMuPDF
+pytesseract
+pillow
+pandas
+python-dotenv
