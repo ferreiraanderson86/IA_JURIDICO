@@ -82,7 +82,9 @@ if st.session_state.analises:
 # Upload de Arquivos
 # ------------------------------
 uploaded_files = st.file_uploader(
-    "📎 Envie um ou mais arquivos (PDF ou DOCX)", type=["pdf", "docx"], accept_multiple_files=True
+    "📎 Envie um ou mais arquivos (PDF, DOCX, imagens, Excel)", 
+    type=["pdf", "docx", "png", "jpg", "jpeg", "xls", "xlsx"], 
+    accept_multiple_files=True
 )
 
 col1, col2 = st.columns([1, 1])
@@ -94,14 +96,9 @@ if area in ["Civil", "Bancário"] and uploaded_files:
     with col1:
         if st.button("🔍 Analisar Contratos"):
             for up in uploaded_files:
-                suffix = os.path.splitext(up.name)[1]
-                with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
-                    tmp.write(up.read())
-                    caminho_temp = tmp.name
-
                 try:
                     with st.spinner(f"Analisando {up.name}..."):
-                        texto = ler_arquivo(caminho_temp)
+                        texto = ler_arquivo(up)
                         analise = gerar_analise(texto, area=area)
                         st.session_state.analises[up.name] = analise
                         st.session_state.chat_history.append(
