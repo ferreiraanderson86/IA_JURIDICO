@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 streamlit
 openai>=1.6.0
 python-docx
@@ -5,4 +6,13 @@ PyMuPDF
 pytesseract
 pillow
 pandas
+=======
+streamlit
+openai>=1.6.0
+python-docx
+PyMuPDF
+pytesseract
+pillow
+pandas
+>>>>>>> 84bc48d03e12871b7a7bf01d0c98fbf1f1bbbe91
 python-dotenv

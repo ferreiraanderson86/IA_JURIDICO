@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 echo ".env" >> .gitignore
+=======
+echo ".env" >> .gitignore
+>>>>>>> 84bc48d03e12871b7a7bf01d0c98fbf1f1bbbe91
 echo "__pycache__/" >> .gitignore
